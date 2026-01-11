@@ -113,9 +113,6 @@
                                     Password
                                     <span class="text-red-500">*</span>
                                 </label>
-                                <a href="#" class="text-sm text-blue-600 hover:text-blue-800 font-medium transition-colors">
-                                    Forgot password?
-                                </a>
                             </div>
                             <div class="relative group">
                                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -135,11 +132,6 @@
 
                         <!-- Submit Button -->
                         <button type="submit" class="group relative w-full flex justify-center py-3.5 px-4 border border-transparent rounded-xl text-white font-medium bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg">
-                            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-                                <svg class="h-5 w-5 text-blue-300 group-hover:text-blue-200 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
-                                </svg>
-                            </span>
                             Sign In
                         </button>
                     </form>
@@ -154,6 +146,7 @@
 </div>
 
 <!-- Toggle Password Visibility Script -->
+@push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const passwordToggle = document.querySelector('button[type="button"]');
@@ -221,4 +214,5 @@
         background: #555;
     }
 </style>
+@endpush
 @endsection
