@@ -2,15 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::controller(AuthController::class)->group(function() {
-    Route::get("/login", "login");
+// public page
+Route::get("/login", [AuthController::class, "login"]);
+Route::controller(HomeController::class)->group(function() {
+    Route::get("/", "home");
+    Route::get("/products", "products");
 });
 
 // Dashboard Page

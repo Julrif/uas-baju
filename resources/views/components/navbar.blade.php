@@ -21,7 +21,7 @@
 
         <!-- MENU DESKTOP -->
         <div class="hidden lg:flex items-center space-x-1">
-          <a href="#" class="relative px-6 py-2.5 text-white/90 hover:text-white font-medium rounded-lg transition-all duration-300 group">
+          <a href="/" class="relative px-6 py-2.5 text-white/90 hover:text-white font-medium rounded-lg transition-all duration-300 group">
             <span class="relative z-10 flex items-center space-x-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
@@ -31,7 +31,7 @@
             <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
           </a>
           
-          <a href="#" class="relative px-6 py-2.5 text-white/90 hover:text-white font-medium rounded-lg transition-all duration-300 group">
+          <a href="/products" class="relative px-6 py-2.5 text-white/90 hover:text-white font-medium rounded-lg transition-all duration-300 group">
             <span class="relative z-10 flex items-center space-x-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
@@ -154,7 +154,7 @@
       
       <!-- Menu Items -->
       <div class="p-4 space-y-1">
-        <a href="#" class="flex items-center space-x-3 px-4 py-3.5 rounded-lg text-white hover:bg-white/10 transition-all duration-200 group">
+        <a href="/" class="flex items-center space-x-3 px-4 py-3.5 rounded-lg text-white hover:bg-white/10 transition-all duration-200 group">
           <div class="p-2 rounded-lg bg-blue-500/20 group-hover:bg-blue-500/30 transition-colors duration-200">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
@@ -163,7 +163,7 @@
           <span class="font-medium">Home</span>
         </a>
         
-        <a href="#" class="flex items-center space-x-3 px-4 py-3.5 rounded-lg text-white hover:bg-white/10 transition-all duration-200 group">
+        <a href="/products" class="flex items-center space-x-3 px-4 py-3.5 rounded-lg text-white hover:bg-white/10 transition-all duration-200 group">
           <div class="p-2 rounded-lg bg-blue-500/20 group-hover:bg-blue-500/30 transition-colors duration-200">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
