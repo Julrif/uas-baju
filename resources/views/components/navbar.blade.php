@@ -1,5 +1,5 @@
 <!-- NAVBAR -->
-<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+<nav class="fixed top-0 left-0 right-0 z-[9999] transition-all duration-300" id="navbar">
   <div class="mx-auto">
     <div class="relative px-4">
       <!-- Background dengan glassmorphism effect -->
@@ -41,7 +41,7 @@
             <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
           </a>
           
-          <a href="#" class="relative px-6 py-2.5 text-white/90 hover:text-white font-medium rounded-lg transition-all duration-300 group">
+          <a href="/about" class="relative px-6 py-2.5 text-white/90 hover:text-white font-medium rounded-lg transition-all duration-300 group">
             <span class="relative z-10 flex items-center space-x-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -124,34 +124,6 @@
     
     <!-- Menu Panel -->
     <div class="absolute right-0 top-0 h-full w-80 bg-gradient-to-b from-gray-900/95 to-gray-800/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 border-l border-white/10 shadow-2xl" id="menu-panel">
-      <!-- Header Mobile Menu -->
-      <div class="p-6 border-b border-white/10">
-        <div class="flex items-center justify-between mb-8">
-          <div class="flex items-center space-x-3">
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
-              <span class="text-white font-bold text-xl">{{ substr(env("APP_NAME"), 0, 1) }}</span>
-            </div>
-            <span class="text-2xl font-bold text-white">{{env("APP_NAME")}}</span>
-          </div>
-          <button id="close-menu" class="p-2 rounded-lg hover:bg-white/10 transition-colors duration-200">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          </button>
-        </div>
-        
-        <!-- User Info -->
-        <div class="flex items-center space-x-3 p-3 rounded-lg bg-white/5">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-cyan-300 flex items-center justify-center">
-            <span class="text-white font-semibold">U</span>
-          </div>
-          <div>
-            <p class="text-white font-medium">User Name</p>
-            <p class="text-white/60 text-sm">user@example.com</p>
-          </div>
-        </div>
-      </div>
-      
       <!-- Menu Items -->
       <div class="p-4 space-y-1">
         <a href="/" class="flex items-center space-x-3 px-4 py-3.5 rounded-lg text-white hover:bg-white/10 transition-all duration-200 group">
@@ -173,7 +145,7 @@
           <span class="ml-auto px-2 py-1 text-xs bg-blue-500/30 text-blue-300 rounded-full">New</span>
         </a>
         
-        <a href="#" class="flex items-center space-x-3 px-4 py-3.5 rounded-lg text-white hover:bg-white/10 transition-all duration-200 group">
+        <a href="/" class="flex items-center space-x-3 px-4 py-3.5 rounded-lg text-white hover:bg-white/10 transition-all duration-200 group">
           <div class="p-2 rounded-lg bg-blue-500/20 group-hover:bg-blue-500/30 transition-colors duration-200">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -182,34 +154,15 @@
           <span class="font-medium">About</span>
         </a>
         
-        <a href="#" class="flex items-center space-x-3 px-4 py-3.5 rounded-lg text-white hover:bg-white/10 transition-all duration-200 group">
+        <a href="/about" class="flex items-center space-x-3 px-4 py-3.5 rounded-lg text-white hover:bg-white/10 transition-all duration-200 group">
           <div class="p-2 rounded-lg bg-blue-500/20 group-hover:bg-blue-500/30 transition-colors duration-200">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-            </svg>
+            <div class="w-5 h-5 flex items-center justify-center">
+              <i class="bi bi-person-lock"></i>
+            </div>
           </div>
-          <span class="font-medium">Cart</span>
-          <span class="ml-auto px-2 py-1 text-xs bg-red-500/30 text-red-300 rounded-full">3 items</span>
+          <span class="font-medium">Login</span>
         </a>
-      </div>
-      
-      <!-- Footer Mobile Menu -->
-      <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-white/10">
-        <div class="space-y-3">
-          <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 transition-all duration-200">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-            <span>Settings</span>
-          </a>
-          <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-red-300 hover:bg-red-500/20 transition-all duration-200">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
-            </svg>
-            <span>Logout</span>
-          </a>
-        </div>
+
       </div>
     </div>
   </div>

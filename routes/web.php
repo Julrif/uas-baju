@@ -10,6 +10,7 @@ Route::get("/login", [AuthController::class, "login"]);
 Route::controller(HomeController::class)->group(function() {
     Route::get("/", "home");
     Route::get("/products", "products");
+    Route::get("/about", "about");
 });
 
 // Dashboard Page

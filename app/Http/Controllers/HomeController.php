@@ -24,4 +24,8 @@ class HomeController extends Controller
 
         return view('pages.products', compact('data'));
     }
+
+    function about() {
+        return view("pages.about");
+    }
 }
