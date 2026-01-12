@@ -31,7 +31,7 @@
         </a>
         <div class="border-b border-gray-600"></div>
 
-        <a href="/logout"
+        <a href="{{ route("logout") }}"
            class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-red-800 transition">
             <i class='bi bi-box-arrow-in-left'></i> <span>Log Out</span>
         </a>
