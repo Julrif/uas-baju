@@ -9,17 +9,16 @@
 
     <!-- Admin Menu -->
     <nav class="flex-1 overflow-y-auto p-4 space-y-2">
-
         <!-- Admin Menu  -->
         @if(Auth::user()->role_id == 1)
             <a href="/dashboard"
             class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-800 transition
-                    {{ request()->is('dashboard*') ? 'bg-slate-800' : '' }}">
+                    {{ request()->is('dashboard') ? 'bg-slate-800' : '' }}">
                 <i class='bi bi-speedometer2'></i> <span>Dashboard</span>
             </a>
-            <a href="/product"
+            <a href="/dashboard/product"
             class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-800 transition
-                    {{ request()->is('product*') ? 'bg-slate-800' : '' }}">
+                    {{ request()->is('dashboard/product*') ? 'bg-slate-800' : '' }}">
                 <i class='bi bi-bag-plus-fill'></i> <span>Product</span>
             </a>
             <div class="border-b border-gray-600"></div>

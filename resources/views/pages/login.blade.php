@@ -13,14 +13,16 @@
         <!-- Left Side - Branding & Info -->
         <div class="hidden md:block space-y-8">
             <!-- Logo -->
-            <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-lg">
-                    <span class="text-white font-bold text-xl">{{ substr(env("APP_NAME"), 0, 1) }}</span>
+            <a href="/">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-xl">{{ substr(env("APP_NAME"), 0, 1) }}</span>
+                    </div>
+                    <span class="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                        {{ env("APP_NAME") }}
+                    </span>
                 </div>
-                <span class="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-                    {{ env("APP_NAME") }}
-                </span>
-            </div>
+            </a>
 
             <!-- Hero Text -->
             <div class="space-y-4">
@@ -75,12 +77,14 @@
                 <div class="p-8 sm:p-10">
                     <!-- Mobile Logo -->
                     <div class="flex justify-center md:hidden mb-8">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center">
-                                <span class="text-white font-bold">{{ substr(env("APP_NAME"), 0, 1) }}</span>
+                        <a href="/">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center">
+                                    <span class="text-white font-bold">{{ substr(env("APP_NAME"), 0, 1) }}</span>
+                                </div>
+                                <span class="text-2xl font-bold text-gray-900">{{ env("APP_NAME") }}</span>
                             </div>
-                            <span class="text-2xl font-bold text-gray-900">{{ env("APP_NAME") }}</span>
-                        </div>
+                        </a>
                     </div>
 
                     <!-- Header -->

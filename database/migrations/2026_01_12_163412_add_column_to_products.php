@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->dropColumn("image");
-            $table->foreignId("image_id")->constrained("files");
+            $table->foreignId("image_id")->nullable()->constrained("files");
         });
     }
 
