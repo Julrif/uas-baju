@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -11,17 +10,7 @@ class HomeController extends Controller
     }
 
     function products() {
-        $data = [
-            [
-                'id' => 1,
-                'name' => "Baju Bahar Cenah",
-                'image' => "https://placehold.co/400",
-                'price' => 1000000,
-                'size' => 'S',
-                'description' => 'lorem ipsum dolor sit memet !.'
-            ]
-        ];
-
+        $data = Product::with("image")->get();
         return view('pages.products', compact('data'));
     }
 

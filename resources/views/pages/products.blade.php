@@ -27,7 +27,7 @@
 
                     <!-- Image -->
                     <div class="relative overflow-hidden">
-                        <img src="{{ $item['image'] }}"
+                        <img src="{{ asset("/storage/" . $item->image->path) }}"
                              class="h-72 w-full object-cover group-hover:scale-110 transition duration-500">
 
                         <span class="absolute top-4 left-4 bg-[#726fbe] text-white text-xs px-4 py-1 rounded-full shadow">

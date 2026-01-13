@@ -51,56 +51,23 @@
             <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
           </a>
           
-          <a href="/login" class="relative px-6 py-2.5 text-white/90 text-white font-medium rounded-lg transition-all duration-300 group">
-            <span class="relative z-10 flex items-center space-x-2">
-              <i class="bi bi-person-lock"></i>
-              <span>Log In</span>
-            </span>
-            <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-          </a>
-          
-          <!-- Shopping Cart -->
-          <!-- <button class="relative ml-4 p-2 text-white/90 hover:text-white rounded-lg hover:bg-white/10 transition-all duration-300 group">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-            </svg>
-            <span class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center animate-pulse">
-              3
-            </span>
-          </button> -->
-          
-          <!-- User Profile -->
-          <!-- <div class="relative ml-4 group">
-            <button class="flex items-center space-x-2 p-2 rounded-lg hover:bg-white/10 transition-all duration-300">
-              <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-400 to-cyan-300 flex items-center justify-center">
-                <span class="text-white font-semibold">U</span>
-              </div>
-            </button>
-            <div class="absolute right-0 mt-2 w-48 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-              <div class="p-2">
-                <a href="#" class="flex items-center space-x-2 px-3 py-2.5 text-white hover:bg-white/10 rounded-lg transition-colors duration-200">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                  </svg>
-                  <span>Profile</span>
-                </a>
-                <a href="#" class="flex items-center space-x-2 px-3 py-2.5 text-white hover:bg-white/10 rounded-lg transition-colors duration-200">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                  <span>Settings</span>
-                </a>
-                <div class="border-t border-white/20 my-2"></div>
-                <a href="#" class="flex items-center space-x-2 px-3 py-2.5 text-red-300 hover:bg-red-500/20 rounded-lg transition-colors duration-200">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
-                  </svg>
-                  <span>Logout</span>
-                </a>
-              </div>
-            </div>
-          </div> -->
+          @if (Auth::user() )
+            <a href="/dashboard" class="relative px-6 py-2.5 text-white/90 text-white font-medium rounded-lg transition-all duration-300 group">
+              <span class="relative z-10 flex items-center space-x-2">
+                <i class="bi bi-speedometer"></i>
+                <span>Dashboard</span>
+              </span>
+              <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+            </a>
+            @else
+            <a href="/login" class="relative px-6 py-2.5 text-white/90 text-white font-medium rounded-lg transition-all duration-300 group">
+              <span class="relative z-10 flex items-center space-x-2">
+                <i class="bi bi-person-lock"></i>
+                <span>Log In</span>
+              </span>
+              <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+            </a>
+          @endif
         </div>
 
         <!-- BUTTON MOBILE -->
