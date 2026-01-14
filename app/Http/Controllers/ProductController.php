@@ -12,7 +12,10 @@ class ProductController extends Controller
     // View
     function index() {
         $products = Product::with("image")->get();
-        return view("pages.dashboard.product.index", compact("products"));
+        $stats = [
+            "total" => $products->count()
+        ];
+        return view("pages.dashboard.product.index", compact("products", "stats"));
     }
     function create() {
         return view("pages.dashboard.product.create");
@@ -46,7 +49,7 @@ class ProductController extends Controller
         ]);
 
         return redirect()->route('admin.products.index')
-            ->with('message','Product berhasil ditambahkan!');
+            ->with('success','Product berhasil ditambahkan!');
     }
 
     function update(Request $req, $id)
@@ -90,12 +93,12 @@ class ProductController extends Controller
         $product->save();
 
         return redirect()->route('admin.products.index')
-            ->with('message','Product berhasil diupdate!');
+            ->with('success','Product berhasil diupdate!');
     }
 
     function delete($id) {
         Product::destroy($id);
         return redirect()->route('admin.products.index')
-            ->with('message','Product berhasil dihapus!');
+            ->with('success','Product berhasil dihapus!');
     }
 }
