@@ -9,8 +9,9 @@ use App\Http\Controllers\ProductController;
 // public page
 Route::controller(HomeController::class)->group(function() {
     Route::get("/", "home");
-    Route::get("/products", "products");
+    Route::get("/products", "products")->name("products.index");
     Route::get("/about", "about");
+    Route::get("/products/{id}", 'detailProduct')->name("product.detail");
 });
 Route::middleware("guest")->controller(AuthController::class)->group(function() {
     Route::get("/login", "login")->name("login");
