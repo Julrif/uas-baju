@@ -51,22 +51,31 @@
             <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
           </a>
           
-          @if (Auth::user() )
-            <a href="/dashboard" class="relative px-6 py-2.5 text-white/90 text-white font-medium rounded-lg transition-all duration-300 group">
-              <span class="relative z-10 flex items-center space-x-2">
-                <i class="bi bi-speedometer"></i>
-                <span>Dashboard</span>
-              </span>
-              <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-            </a>
+          @if (Auth::user())
+            @if (Auth::user()->role_id == 1)
+              <a href="/dashboard" class="relative px-6 py-2.5 text-white/90 text-white font-medium rounded-lg transition-all duration-300 group">
+                <span class="relative z-10 flex items-center space-x-2">
+                  <i class="bi bi-speedometer"></i>
+                  <span>Dashboard</span>
+                </span>
+                <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              </a>
+              @else
+                <a href="/keranjang" class="relative px-6 py-2.5 text-white/90 text-white font-medium rounded-lg transition-all duration-300 group">
+                  <span class="relative z-10 flex items-center space-x-2">
+                    <i class=" text-2xl bi bi-cart"></i>
+                  </span>
+                  <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                </a>
+            @endif
             @else
-            <a href="/login" class="relative px-6 py-2.5 text-white/90 text-white font-medium rounded-lg transition-all duration-300 group">
-              <span class="relative z-10 flex items-center space-x-2">
-                <i class="bi bi-person-lock"></i>
-                <span>Log In</span>
-              </span>
-              <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-            </a>
+              <a href="/login" class="relative px-6 py-2.5 text-white/90 text-white font-medium rounded-lg transition-all duration-300 group">
+                <span class="relative z-10 flex items-center space-x-2">
+                  <i class="bi bi-person-lock"></i>
+                  <span>Log In</span>
+                </span>
+                <span class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              </a>
           @endif
         </div>
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
@@ -41,6 +42,16 @@ Route::middleware("auth")->group(function() {
             Route::delete("/delete/{id}", 'delete')->name("admin.products.destroy");
         });
     });
-});
 
-// Test edit
+
+    // Keranjang / Cart
+    Route::prefix("keranjang")->controller(CartController::class)->group(function() {
+        // View
+        Route::get("/", 'index')->name("user.keranjang.index");
+
+        // Services
+        Route::post("/", "create")->name("user.keranjang.create");
+        Route::put("/{id}", "update")->name("user.keranjang.update");
+        Route::delete("/{id}", "delete")->name("user.keranjang.delete");
+    });
+});

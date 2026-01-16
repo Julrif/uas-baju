@@ -22,6 +22,11 @@
 
                 <!-- Product Images -->
                 <div class="space-y-6">
+                    @if (session()->has('message'))
+                        <div class="p-3 rounded-md bg-green-200">
+                            {{ session('message') }}
+                        </div>
+                    @endif
                     <!-- Main Image -->
                     <div class="relative group">
                         <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-violet-50 to-white p-2">
@@ -169,13 +174,16 @@
                             </a>
 
                             <!-- Add to Cart -->
-                            <button class="flex-1 group relative bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                                <div class="relative z-10 flex items-center justify-center gap-3">
-                                    <i class="bi bi-cart-plus text-xl"></i>
-                                    <span>Add to Cart</span>
-                                </div>
-                                <div class="absolute inset-0 bg-white/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
-                            </button>
+                            <form action="{{ route("user.keranjang.create") }}" method="POST">
+                                @csrf
+                                <button name="product_id" value="{{ $product['id'] }}" class="flex-1 group relative bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                                    <div class="relative z-10 flex items-center justify-center gap-3">
+                                        <i class="bi bi-cart-plus text-xl"></i>
+                                        <span>Add to Cart</span>
+                                    </div>
+                                    <div class="absolute inset-0 bg-white/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                                </button>
+                            </form>
                         </div>
 
                         <!-- Quick Actions -->
