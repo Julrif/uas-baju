@@ -12,6 +12,7 @@
     <!-- Navbar -->
     @yield('content')
 
+    {{-- Script --}}
     @stack('scripts')
 </body>
 </html>

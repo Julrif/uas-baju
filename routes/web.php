@@ -34,7 +34,6 @@ Route::middleware("auth")->group(function() {
             // View
             Route::get("/", 'index')->name("admin.products.index");
             Route::get("/create", 'create')->name("admin.products.create");
-            Route::get("/update/{id}", 'updateView')->name("admin.products.edit");
             
             // Services
             Route::post("/store", 'store')->name("admin.products.store");

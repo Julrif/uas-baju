@@ -194,64 +194,7 @@
 </div>
 
 <!-- Edit Product Modal -->
-<div id="editModal" class="fixed inset-0 z-50 hidden">
-    <div class="absolute inset-0 bg-black/50" onclick="closeEditModal()"></div>
-
-    <div class="relative bg-white w-full max-w-3xl mx-auto mt-10 rounded-xl shadow-lg overflow-y-auto max-h-[90vh]">
-        <div class="flex items-center justify-between px-6 py-4 border-b">
-            <h2 class="text-xl font-semibold">Edit Product</h2>
-            <button onclick="closeEditModal()">
-                <i class="bi bi-x-lg"></i>
-            </button>
-        </div>
-
-        <form id="editForm" method="POST" enctype="multipart/form-data" class="p-6 space-y-5">
-            @csrf
-            @method('PUT')
-
-            <input type="hidden" id="edit_id">
-
-            <!-- Name -->
-            <div>
-                <label class="font-medium">Product Name</label>
-                <input id="edit_name" name="name" class="w-full border px-4 py-2 rounded-lg" required>
-            </div>
-
-            <!-- Price -->
-            <div>
-                <label class="font-medium">Price</label>
-                <input id="edit_price" name="price" type="number" class="w-full border px-4 py-2 rounded-lg" required>
-            </div>
-
-            <!-- Size -->
-            <div>
-                <label class="font-medium">Size</label>
-                <input id="edit_size" name="size" class="w-full border px-4 py-2 rounded-lg">
-            </div>
-
-            <!-- Description -->
-            <div>
-                <label class="font-medium">Description</label>
-                <textarea id="edit_description" name="description" rows="4" class="w-full border px-4 py-2 rounded-lg"></textarea>
-            </div>
-
-            <!-- Image -->
-            <div>
-                <label class="font-medium">Image</label>
-                <input type="file" name="image" class="w-full">
-            </div>
-
-            <div class="flex justify-end gap-3 pt-4 border-t">
-                <button type="button" onclick="closeEditModal()" class="px-4 py-2 border rounded-lg">
-                    Cancel
-                </button>
-                <button type="submit" class="px-6 py-2 bg-indigo-600 text-white rounded-lg">
-                    Update
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
+@include("pages.dashboard.product.partials.editModal")
 
 
 @push('scripts')
@@ -292,25 +235,6 @@ searchInput.addEventListener('input', function(e) {
     });
 });
 
-function openEditModal(product) {
-    const modal = document.getElementById('editModal');
-    const form  = document.getElementById('editForm');
-
-    // set action form
-    form.action = `/admin/products/${product.id}`;
-
-    // isi field
-    document.getElementById('edit_name').value = product.name;
-    document.getElementById('edit_price').value = product.price;
-    document.getElementById('edit_size').value = product.size ?? '';
-    document.getElementById('edit_description').value = product.description ?? '';
-
-    modal.classList.remove('hidden');
-}
-
-function closeEditModal() {
-    document.getElementById('editModal').classList.add('hidden');
-}
 </script>
 @endpush
 
@@ -364,3 +288,4 @@ tbody tr:hover {
 </style>
 @endpush
 @endsection
+
