@@ -19,11 +19,21 @@
                 
                 <div class="flex items-center gap-4">
                     <!-- Add Product Button -->
-                    <a href="{{ route('admin.products.create') }}"
+                    <button
+                        type="button"
+                        class="group flex items-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                        title="Edit Product"
+                        onclick="openEditModal()"
+                    >
+                        <i class="bi bi-plus-circle text-lg"></i>
+                    </button>
+
+                    {{-- <a href="{{ route('admin.products.create') }}"
                        class="group flex items-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <i class="bi bi-plus-circle text-lg"></i>
                         <span>Add Product</span>
-                    </a>
+                    </a> --}}
+
                 </div>
             </div>
         </div>
@@ -172,10 +182,10 @@
                                     </div>
                                     <h3 class="text-xl font-semibold text-gray-900 mb-2">No Products Found</h3>
                                     <p class="text-gray-600 mb-6">Get started by adding your first product</p>
-                                    <a href="{{ route('admin.products.create') }}"
+                                    {{-- <a href="{{ route('admin.products.create') }}"
                                        class="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-6 py-3 rounded-xl shadow hover:shadow-lg transition">
                                         + Add First Product
-                                    </a>
+                                    </a> --}}
                                 </div>
                             </td>
                         </tr>
@@ -187,6 +197,26 @@
         </div>
 
     </main>
+
+
+    {{-- modal creta --}}
+    <div id="createModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/50" onclick="closeModal()"></div>
+
+        <div class="relative bg-white w-full max-w-3xl mx-auto mt-10 rounded-xl shadow-lg max-h-[90vh]">
+            <div class="flex items-center justify-between px-6 py-4 border-b">
+                <h2 class="text-xl font-semibold">Tambah Product</h2>
+                <button onclick="closeModal()">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            {{-- modal content --}}
+            <div class="h-full overflow-y-auto">
+                @include("pages.dashboard.product.create")
+            </div>
+        </div>
+    </div>
+
 
 </div>
 
@@ -228,6 +258,31 @@ searchInput.addEventListener('input', function(e) {
     });
 });
 </script>
+
+
+{{-- modal create sceiprr --}}
+<script>
+function openEditModal() {
+    const modal = document.getElementById('createModal');
+    // const form  = document.getElementById('editForm');
+
+    // set action form
+    // form.action = `/admin/products/${product.id}`;
+
+    // // isi field
+    // document.getElementById('edit_name').value = product.name;
+    // document.getElementById('edit_price').value = product.price;
+    // document.getElementById('edit_size').value = product.size ?? '';
+    // document.getElementById('edit_description').value = product.description ?? '';
+
+    modal.classList.remove('hidden');
+}
+
+function closeModal() {
+    document.getElementById('createModal').classList.add('hidden');
+}
+</script>
+
 @endpush
 
 @push("styles")
