@@ -33,7 +33,7 @@ Route::middleware("auth")->group(function() {
         Route::prefix("product")->controller(ProductController::class)->group(function() {
             // View
             Route::get("/", 'index')->name("admin.products.index");
-            Route::get("/create", 'create')->name("admin.products.create");
+            // Route::get("/create", 'create')->name("admin.products.create");
             
             // Services
             Route::post("/store", 'store')->name("admin.products.store");
